@@ -14,7 +14,7 @@ module.exports = function(data) {
             } else {
 
                 //reader.on('tag:clouds', (data) => console.log(data.attributes));
-                   reader.on('tag:time', (data) => console.log(data.attributes));
+                   reader.on('tag:time', (data) => console.log(data.children));
                 reader.on('done', data => {
                     resolve('finished parsing.')
                 });
