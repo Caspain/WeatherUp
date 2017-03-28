@@ -1,15 +1,14 @@
 const Promise = require('bluebird');
-const axios = require('axios');
+const request = require('request');
 const config = require('../configuration/config');
 module.exports = function(data) {
     return new Promise((resolve, reject) => {
 
-      axios.get('https://api.github.com/users/' + username)
-        .then(function(response){
-          console.log(response.data); // ex.: { user: 'Your User'}
-          console.log(response.status); // ex.: 200
-        }); 
-
+      request('http://www.google.com', function (error, response, body) {
+        console.log('error:', error); // Print the error if one occurred
+        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+        console.log('body:', body); // Print the HTML for the Google homepage.
+      });
         // promise.then((result) => {
         //     resolve(result);
         // }).catch((error) => {
