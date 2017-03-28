@@ -1,0 +1,34 @@
+{
+  "name": "weather-up",
+  "version": "0.0.1",
+  "description": "a weather application for sending out weather forecasts to employees.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caspain/WeatherUp.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Server",
+    "Weather",
+    "Employee",
+    "Load",
+    "Balanced."
+  ],
+  "author": "remario richards",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caspain/WeatherUp/issues"
+  },
+  "homepage": "https://github.com/Caspain/WeatherUp#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "cors": "^2.8.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.2"
+  }
+}
