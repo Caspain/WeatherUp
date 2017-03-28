@@ -6,7 +6,7 @@ module.exports = function(express) {
     });
 
     router.route('/employee/insert').post((req, res) => {
-
+           
     });
 
     router.route('/employee/insert').get((req, res) => {
