@@ -8,7 +8,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "preinstall": "npm install pm2 -g",
+   "start": "pm2 start --attach app.js"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,7 @@
     "mongoose": "^4.9.2",
     "mongoose-auto-increment": "^5.0.1",
     "npm": "^4.4.4",
-    "randomstring": "^1.1.5",
-    "pm2":"^2.4.2"
+    "randomstring": "^1.1.5"
+
   }
 }
