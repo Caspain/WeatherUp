@@ -1,3 +1,4 @@
+const constants = require('../constants/constants');
 module.exports = function(express) {
     const router = express.Router();
     router.route('/').get(function(req, res) {
