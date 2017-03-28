@@ -41,6 +41,7 @@
     "npm": "^4.4.4",
     "randomstring": "^1.1.5",
     "request": "^2.81.0",
+    "xml-reader": "^2.4.3",
     "xml2js": "^0.4.17"
   }
 }

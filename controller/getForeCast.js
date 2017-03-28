@@ -1,7 +1,8 @@
 const Promise = require('bluebird');
 const request = require('request');
 const config = require('../configuration/config');
-const xml = require('xml2js').parseString;
+const XmlReader = require('xml-reader');
+const reader = XmlReader.create();
 module.exports = function(data) {
     return new Promise((resolve, reject) => {
 
@@ -9,9 +10,9 @@ module.exports = function(data) {
             if (error) {
                 reject(error);
             } else {
-                xml(body, function(err, result) {
-                    resolve(result);
-                });
+              reader.on('done', data => resolve(data));
+              reader.parse(body);
+
 
             }
         });
