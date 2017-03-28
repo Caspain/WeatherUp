@@ -13,7 +13,8 @@ module.exports = function(data) {
                 reject(error);
             } else {
 
-                reader.on('tag:time', (data) => console.log(data));
+                reader.on('tag:from', (data) => console.log(data));
+                reader.on('tag:to', (data) => console.log(data));
                 reader.on('done', data => {
                     resolve('finished parsing.')
                 });
