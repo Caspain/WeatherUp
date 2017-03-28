@@ -1,2 +1,2 @@
 
-web : pm2 start server.js
+web : main.js
