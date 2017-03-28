@@ -2,12 +2,13 @@ const constants = require('../constants/constants');
 module.exports = function(req,res,type){
 let data = {};
 switch (type) {
-  case constant.util.insertEmployee:{
+  case constants.util.insertEmployee:{
     data['values'] = {
       'name':req.body.name,
       'email':req.body.email,
-      'location':req.body.email,
-      'forecast':req.body.forecast
+      'location':req.body.location,
+      'forecast':req.body.forecast,
+      'work_hours':req.body.hours
     };
 
   break;

@@ -20,7 +20,7 @@ module.exports = function(){
 };
 mongoose.connect(url, options);
 const conn = mongoose.connection;
-autoIncrement.initialize(conn);
+
 conn.on('error', console.error.bind(console, 'connection error'));
 conn.once('open', function() {
     console.log('database connection  established\n');

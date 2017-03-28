@@ -17,7 +17,8 @@ module.exports = function(express) {
                 })
             }).catch((err) => {
                 res.status(406).json({
-                    msg: 'failure',body: err
+                    msg: 'failure',
+                    body: err
                 });
             });
         } else {
