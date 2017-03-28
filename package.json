@@ -1,6 +1,9 @@
 {
   "name": "weather-up",
   "version": "0.0.1",
+  "engines": {
+    "node": "6.9.4"
+  },
   "description": "a weather application for sending out weather forecasts to employees.",
   "main": "server.js",
   "scripts": {
