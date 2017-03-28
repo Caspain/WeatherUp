@@ -3,14 +3,12 @@ const axios = require('axios');
 const config = require('../configuration/config');
 module.exports = function(data) {
     return new Promise((resolve, reject) => {
-console.log(config.forecast_kingston_api)
-      axios.get(config.forecast_kingston_api)
-        .then(function (response) {
-           resolve(response);
-        })
-        .catch(function (response) {
-          reject(response);
-        });
+
+      axios.get('https://api.github.com/users/' + username)
+        .then(function(response){
+          console.log(response.data); // ex.: { user: 'Your User'}
+          console.log(response.status); // ex.: 200
+        }); 
 
         // promise.then((result) => {
         //     resolve(result);
