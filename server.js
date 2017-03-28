@@ -2,9 +2,16 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
+const parser = require('body-parser');
 //set up default port
 app.set('port',1337);
 
+//set up body parser
+app.use(parser.urlencoded({
+    extended: true,
+    limit: '1mb'
+}));
+app.use(parser.json());
 //use cors
 var corsOptions = {
   origin: 'http://example.com',

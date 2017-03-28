@@ -1,5 +1,5 @@
 let obj = {};
-let obj['util'] = {};
-obj['util']['insertEmployee'] = 'insertEmployee';
 
-modul.exports = obj;
+obj['util'] = {'insertEmployee':'insertEmployee'};
+
+module.exports = obj;
