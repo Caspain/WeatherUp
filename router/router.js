@@ -33,8 +33,9 @@ module.exports = function(express) {
     // router.route('/employee/get/:name').get((req, res) => {
     //
     // });
-    router.route('/forecast/get/:city').get((req, res) => {
+    router.route('/forecast/get/:city').get(function(req, res) {
         let city = req.params.city;
+        console.log(city)
         if (city != null) {
             const promise = require('../controller/getForeCast')(city);
             promise.then((result) => {
