@@ -13,8 +13,8 @@ module.exports = function(data) {
                 reject(error);
             } else {
 
-                reader.on('tag:forecast', (data) => console.log(data));
-                
+                reader.on('tag:time', (data) => console.log(data.children));
+
                 reader.on('done', data => {
                     resolve('finished parsing.')
                 });
