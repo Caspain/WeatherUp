@@ -8,7 +8,7 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node ./node_modules/.bin/pm2 start --attach app.js"
+        "start": "node ./node_modules/.bin/pm2 start --attach app.js -i -1 --watch"
     },
     "repository": {
         "type": "git",
