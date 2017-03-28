@@ -3,7 +3,7 @@ module.exports = function(){
   const Promise = require('bluebird');
   mongoose.Promise = Promise; // switch to blude bird promise
   const url = 'mongodb://weather-up:weather@ds133158.mlab.com:33158/weather-up';
-
+  const autoIncrement = require('mongoose-auto-increment');
   const options = {
     server: {
         socketOptions: {

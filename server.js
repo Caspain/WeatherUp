@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-
+const path = require('path');
 //set up default port
 app.set('port',1337);
 
@@ -14,6 +14,11 @@ app.use(cors(corsOptions));
 
 //enable database connection
 require('./database/init')();
+
+//set up view engine and static file linking
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine','ejs');
+app.use(express.static('public'));
 
 // development error handler
 app.use(function(req, res, next) {
@@ -35,7 +40,8 @@ app.use('/',router);
 const server = app.listen(process.env.PORT || app.get('port'), serverFunction);
 
 function serverFunction(err) {
-    if (err) console.error(err) return;
+    if (err) {console.error(err); return};
     console.info('Server activated on port: ' + server.address().port);
     console.log('heroku hosted.');
 }
+module.exports = app;
