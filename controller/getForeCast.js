@@ -10,8 +10,10 @@ module.exports = function(data) {
             if (error) {
                 reject(error);
             } else {
-              reader.on('done', data => resolve(data));
-              reader.parse(body);
+                reader.parse(body);
+
+              reader.on('done', data => console.log(data));
+
 
 
             }
