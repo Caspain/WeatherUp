@@ -13,7 +13,7 @@ module.exports = function(data) {
                 reject(error);
             } else {
 
-                reader.on('tag:time', (data) => console.log(data.children.attributes));
+                reader.on('tag:clouds', (data) => console.log(data));
 
                 reader.on('done', data => {
                     resolve('finished parsing.')
