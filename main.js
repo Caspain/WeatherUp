@@ -5,7 +5,7 @@ let instances = -1; // Set by Heroku or -1 to scale to max cpu core -1
 let maxMemory = process.env.WEB_MEMORY || 512;    // " " "
 pm2.connect(function() {
   pm2.start({
-    script    : 'app.js',
+    script    : './app.js',
     name      : 'production-app',     // ----> THESE ATTRIBUTES ARE OPTIONAL:
     exec_mode : 'cluster',            // ----> https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#schema
     instances : instances,
