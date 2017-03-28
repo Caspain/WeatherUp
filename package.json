@@ -8,7 +8,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./node_modules/.bin/pm2 start app.js --name server.js"
+    "start": "node ./node_modules/.bin/pm2 start  server.js",
+    "poststart":  "node ./node_modules/.bin/pm2 logs"
   },
   "repository": {
     "type": "git",
