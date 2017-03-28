@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
+
 const parser = require('body-parser');
 //set up default port
 app.set('port', 1337);
@@ -55,5 +56,6 @@ function serverFunction(err) {
     console.info('Server activated on port: ' + server.address().port);
     console.log('heroku hosted.');
 }
+
 
 module.exports = app;
