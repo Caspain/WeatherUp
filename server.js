@@ -4,7 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const parser = require('body-parser');
 //set up default port
-app.set('port',1337);
+app.set('port', 1337);
 
 //set up body parser
 app.use(parser.urlencoded({
@@ -14,8 +14,8 @@ app.use(parser.urlencoded({
 app.use(parser.json());
 //use cors
 var corsOptions = {
-  origin: 'http://example.com',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    origin: 'http://example.com',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions));
 
@@ -24,7 +24,7 @@ require('./database/init')();
 
 //set up view engine and static file linking
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // development error handler
@@ -41,14 +41,19 @@ app.use(function(error, req, res, next) {
 
 //enable all routers
 const router = require('./router/router')(express);
-app.use('/',router);
+app.use('/', router);
 
 //set up server
 const server = app.listen(process.env.PORT || app.get('port'), serverFunction);
 
 function serverFunction(err) {
-    if (err) {console.error(err); return};
+    if (err) {
+        console.error(err);
+        return
+    };
+  //  var mailer = require('./mail/mailer')({})
     console.info('Server activated on port: ' + server.address().port);
     console.log('heroku hosted.');
 }
+
 module.exports = app;
