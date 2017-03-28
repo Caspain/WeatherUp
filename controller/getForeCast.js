@@ -12,7 +12,7 @@ module.exports = function(data) {
             } else {
                 reader.parse(body);
 
-              reader.on('done', data => console.log(data));
+              reader.on('done', data => {console.log(data); resolve(data)});
 
 
 
