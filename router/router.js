@@ -30,9 +30,31 @@ module.exports = function(express) {
         }
     });
 
-    router.route('/employee/insert').get((req, res) => {
-
+    // router.route('/employee/get/:name').get((req, res) => {
+    //
+    // });
+    router.route('/forecast/get/:city').get((req, res) => {
+        let city = req.params.city;
+        if (city != null) {
+            const promise = require('../controller/getForeCast')(city);
+            promise.then((result) => {
+                res.status(200).json({
+                    msg: 'success',
+                    body: result
+                })
+            }).catch((err) => {
+                res.status(406).json({
+                    msg: 'failure',
+                    body: err
+                });
+            });
+        } else {
+            res.status(406).json({
+                msg: 'failure',
+                state: 'missing required fields*',
+                body: 'provide city for forecast.'
+            });
+        }
     });
-
     return router;
 };
