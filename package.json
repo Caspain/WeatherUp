@@ -35,13 +35,18 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "install": "^0.8.7",
+    "kue": "^0.11.5",
     "moment": "^2.18.1",
     "mongoose": "^4.9.2",
     "mongoose-auto-increment": "^5.0.1",
+    "nodemailer": "^3.1.8",
     "npm": "^4.4.4",
     "randomstring": "^1.1.5",
     "request": "^2.81.0",
+    "time-funcs": "^0.1.0",
+    "winston": "^2.3.1",
     "xml-reader": "^2.4.3",
-    "xml2js": "^0.4.17"
+    "xml2js": "^0.4.17",
+    "xoauth2": "^1.2.0"
   }
 }
