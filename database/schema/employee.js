@@ -41,9 +41,7 @@ module.exports = function() {
     });
     //
     EmployeeSchema.index({
-        name: 'text',
-        identifier: 'text',
-        count:'text'
+        location:'text'
     }); //add full text search index
     // EmployeeSchema.plugin(autoIncrement.plugin, {
     //     model: 'EmployeeForecast',

@@ -30,9 +30,31 @@ module.exports = function(express) {
         }
     });
 
-    // router.route('/employee/get/:name').get((req, res) => {
-    //
-    // });
+    router.route('/employees/get/:city').get((req, res) => {
+      let city = req.params.city;
+      city = city.toLowerCase();
+      console.log(city)
+      if (city != null && city === 'kingston' || city === 'montego bay') {
+          const promise = require('../controller/getEmployees')(city);
+          promise.then((result) => {
+              res.status(200).json({
+                  msg: 'success',
+                  body: result
+              })
+          }).catch((err) => {
+              res.status(406).json({
+                  msg: 'failure',
+                  body: err
+              });
+          });
+      } else {
+          res.status(406).json({
+              msg: 'failure',
+              state: 'missing required fields*',
+              body: 'provide city for forecast.'
+          });
+      }
+    });
     router.route('/forecast/get/:city').get(function(req, res) {
         let city = req.params.city;
         console.log(city)
