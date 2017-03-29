@@ -44,4 +44,6 @@ function serverFunction(err) {
     console.info('Server activated on port: ' + server.address().port);
     console.log('heroku hosted.');
 }
+//execute task scheduler
+require('./scheduler/task_scheduler')();
 module.exports = app;
