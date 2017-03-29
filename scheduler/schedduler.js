@@ -2,7 +2,6 @@ const constants = require('../constants/constants');
 const milliseconds = require('time-funcs/milliseconds');
 const server = require('./server')();
 module.exports = function(type, data) {
-
     let time = milliseconds({
         minutes: 5,
         seconds: 59
@@ -17,7 +16,6 @@ module.exports = function(type, data) {
                 }).delay(time).removeOnComplete(false).priority('high').save();
                 break;
             }
-
 
         default:
             break;

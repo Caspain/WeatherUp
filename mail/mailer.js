@@ -1,27 +1,46 @@
 const mailer = require('nodemailer');
-module.exports = function(obj){
+const xoauth2 = require('xoauth2');
+const config = require('../configuration/config');
+const templates = require('./template');
+let transporter = null;
+module.exports = function(info){
 
-  // create reusable transporter object using the default SMTP transport
-  let transporter = mailer.createTransport({
-      service: 'gmail',
-      auth: {
-          user: 'remariorich@gmail.com',
-          pass: '3456gamble'
-      }
-  });
-  // setup email data with unicode symbols
-let mailOptions = {
-    from: 'remariorich@gmail.com', // sender address
-    to: 'giomarioj@gmail.com', // list of receivers
-    subject: 'Hello ', // Subject line
-    text: 'Hello world ?', // plain text body
-    html: '<b>Hello world ?</b>' // html body
-};
-// send mail with defined transport object
-transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-        return console.log(error);
-    }
-    console.log('Message %s sent: %s', info.messageId, info.response);
-});
+  switch (info.mail) {
+          case 'gmail':
+              {
+                  transporter = nodemailer.createTransport({
+                      service: 'gmail',
+                      auth: {
+                          xoauth2: xoauth2.createXOAuth2Generator({
+                              user: config.mail.gmail.mailUser,
+                              clientId: config.mail.gmail.clientId,
+                              clientSecret: config.mail.gmail.clientSecret,
+                              refreshToken: config.mail.gmail.refreshToken,
+                              accessToken: config.mail.gmail.accessToken
+
+                          })
+                      }
+                  });
+                  break;
+              }
+          case 'yahoo':
+              {
+                  break;
+              }
+      };
+      const mailOptions = {
+          from: info.from,
+          to: info.to,
+          subject: info.subject,
+          generateTextFromHTML: true,
+          html: templates.template
+      };
+      transporter.sendMail(mailOptions, function(error, response) {
+          if (error) {
+              console.log(error);
+          } else {
+              console.log(JSON.parse(JSON.stringify(response)));
+          }
+          transporter.close();
+      });
 };
