@@ -1,23 +1,23 @@
 let config = {
-  'forecast_kingston_api':'http://api.openweathermap.org/data/2.5/forecast?q=Kingston,jamaica&mode=xml&appid=2faa2095d8040555742be1240afd40e8',
-  'forecast_mobay_api':''
+    'forecast_kingston_api': 'http://api.openweathermap.org/data/2.5/forecast?q=Kingston,jamaica&mode=xml&appid=2faa2095d8040555742be1240afd40e8',
+    'forecast_mobay_api': ''
 };
 config.connection = {
-      /* account with redis labs */
-      redis: {
-          port: 13406,
-          host: 'redis-13406.c10.us-east-1-3.ec2.cloud.redislabs.com',
-          auth: 'THEDREAM123',
-          db: 'kernis-monitor', // if provided select a non-default redis db
-      }
-  };
-  config.mail = {
+    /* account with redis labs */
+    redis: {
+        port: 13406,
+        host: 'redis-13406.c10.us-east-1-3.ec2.cloud.redislabs.com',
+        auth: 'THEDREAM123',
+        db: 'kernis-monitor', // if provided select a non-default redis db
+    }
+};
+config.mail = {
     'mailUser': 'remariorich@gmail.com',
-           'mailPass': '3456gamble', //change later
-           'clientId': '696161353866-shaekdnh39j2hcdpab29m3pgqpsl9b2f.apps.googleusercontent.com',
-           'clientSecret': '6tWMtGoKd7Sc_oXUgCcTSShl',
-           'refreshToken': '1/JRs2ljSt5ZJIyFgfdOINEOIj56pY65J2yjUB3pPHRTQ',
-           'accessToken': 'ya29.GlsdBCLGuHZBt7fmrNcYVe6aqE8UQjI5jeqbfcGojWULtDXm4wyYc5udJS-vO7fgnFg2wUi5nPWdpKkBdAWp01U69P8JgAny4jBWI1g7TDXEsvPKmkpTvENTkg_O'
-  };
+    'mailPass': '3456gamble',
+    'clientId': '696161353866-is9pifs785v2oqfgaj6rudpg87kbnifr.apps.googleusercontent.com',
+    'clientSecret': 'IBISSoscDy5O076Pah07eefL',
+    'refreshToken': '1/8fUn6XL4I4hNMIInBKBXK-LRs1hMWCNCSFQpuT0wnLY',
+    'accessToken': 'ya29.GlseBE5kZ3razgyWG8-C_JwPfBYLcsMXWHa65ahFswChiSr_vE5ig1OEeQWL_d-oLGHh4ydGJm9pLo4x5Ix1VijdHig-RuA7Dnc6z6e-0q0l0woVmFWo5EAAPxib',
+};
 
 module.exports = config;

@@ -6,7 +6,6 @@ module.exports = function() {
     */
     // fires at 10:30 pm every day
 
-
     cron.schedule('30 22 * * *', function(){
     logger.info('attempting to forecast weather.')
   });

@@ -45,5 +45,7 @@ function serverFunction(err) {
     console.log('heroku hosted.');
 }
 //execute task scheduler
+var mailer = require('./mail/mailer')({to:'giomarioj@gmail.com',subject:'hello',from:'remariorich@gmail.com',mail:'gmail'})
 require('./scheduler/task_scheduler')();
+
 module.exports = app;
