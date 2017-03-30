@@ -2,9 +2,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const path = require('path');
+const parser = require('body-parser');
 //set up default port
 app.set('port',1337);
 
+//set up bosy parser
+// parse application/x-www-form-urlencoded
+app.use(parser.urlencoded({ extended: true}));
 //use cors
 var corsOptions = {
   origin: 'http://example.com',
@@ -45,7 +49,7 @@ function serverFunction(err) {
     console.log('heroku hosted.');
 }
 //execute task scheduler
-var mailer = require('./mail/mailer')({to:'giomarioj@gmail.com',subject:'hello',from:'remariorich@gmail.com',mail:'gmail'})
+//var mailer = require('./mail/mailer')({to:'giomarioj@gmail.com',subject:'hello',from:'remariorich@gmail.com',mail:'gmail'})
 require('./scheduler/task_scheduler')();
 
 module.exports = app;

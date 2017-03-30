@@ -13,7 +13,7 @@ config.connection = {
 };
 config.mail = {
     'mailUser': 'remariorich@gmail.com',
-    'mailPass': '3456gamble',
+    'mailPass': 'sdsadsamble',
     'clientId': '696161353866-is9pifs785v2oqfgaj6rudpg87kbnifr.apps.googleusercontent.com',
     'clientSecret': 'IBISSoscDy5O076Pah07eefL',
     'refreshToken': '1/8fUn6XL4I4hNMIInBKBXK-LRs1hMWCNCSFQpuT0wnLY',

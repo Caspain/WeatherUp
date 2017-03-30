@@ -20,7 +20,8 @@ module.exports = function() {
         },
         location: {
             type: String,
-            required: true
+            required: true,
+            text:true
         },
         time_created: {
             type: String,
@@ -39,10 +40,8 @@ module.exports = function() {
           required:true
         }
     });
-    //
-    EmployeeSchema.index({
-        location:'text'
-    }); //add full text search index
+    EmployeeSchema.index({location:'text'});
+//add full text search index
     // EmployeeSchema.plugin(autoIncrement.plugin, {
     //     model: 'EmployeeForecast',
     //     startAt: 1,

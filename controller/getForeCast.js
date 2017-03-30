@@ -13,11 +13,12 @@ module.exports = function(data) {
         let raw = [];
         let status_for_work = [];
         let percent = 0;
-        request(config.forecast_kingston_api, function(error, response, body) {
+        request(`http://api.openweathermap.org/data/2.5/forecast?q=${data},jamaica&mode=xml&appid=2faa2095d8040555742be1240afd40e8`, function(error, response, body) {
             if (error) {
                 reject(error);
             } else {
-
+           console.log('city: ' + `http://api.openweathermap.org/data/2.5/forecast?q=${data},jamaica&mode=xml&appid=2faa2095d8040555742be1240afd40e8`)
+           console.log('forecast day: ' + nextDay)
                 //reader.on('tag:clouds', (data) => console.log(data.attributes));
                 reader.on('tag:time', (data) => {
                     let date = (data.attributes.from);
@@ -32,10 +33,10 @@ module.exports = function(data) {
                     console.log(raw.length + " length")
                     for (var i = 0; i < raw.length; i++) {
                         let child = raw[i];
-                        
+
                         if (child[7].attributes.value === 'few clouds' || child[7].attributes.value  === 'rainy' || child[7].attributes.value  === 'scattered clouds' || child[7].attributes.value  === 'broken clouds' || child[7].attributes.value  === 'overcast clouds') {
 
-                            percent += 10;
+                            percent += 1;
                         }
                         //  console.log(child)
                         // for (var i = 0; i < child.length; i++) {
@@ -53,7 +54,7 @@ module.exports = function(data) {
                     //          }
                     //
                     //  }
-                    resolve('percent %' + percent)
+                    resolve(percent)
 
                 });
                 reader.parse(body);
