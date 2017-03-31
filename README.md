@@ -17,10 +17,13 @@ Improvements, consider web application accelerators such as Varnish or Nginx, Va
 Instructions.
 
 1: install the server = > npm install
+
 2: add employee = > weather-up.herokuapp.com/employee/insert
+
 3: get employee by city = > weather-up.herokuapp.com/employee/get/:city
 
 The logic of schedulin is  located in the file https://github.com/Caspain/WeatherUp/tree/master/scheduler
+
 by default the script is triggered at 10:30(22:30) every day
 If you want to make any changes please email me at : remariorich@gmail.com
 
